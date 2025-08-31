@@ -5,13 +5,13 @@
 #include <netdb.h>
 #include <unistd.h>
 #include<cstring>
-#define PORTNO 80
+#define PORTNO 8080
 #define FATAL_LOG(message) do{\
     std::cerr<<"Closing the code due to error====>"<<message<<'\n'; \
     std::exit(EXIT_FAILURE); \
 }while(0);
 int TCPClient(){
-    const char* hostname = "www.google.com";
+    const char* hostname = "localhost";
     int socketInit =  socket(AF_INET,SOCK_STREAM,0);
     ssize_t sizeOfByteReceived;
     struct hostent* ipaddress = gethostbyname(hostname);
